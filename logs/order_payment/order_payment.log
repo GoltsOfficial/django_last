@@ -1,0 +1,12 @@
+[2025-11-16 16:04:11,291] INFO [logger: backend.order_payment] [file: api.py] [func: post (line: 84)]: Created Order #1 for user 1 with total cost 200.00
+[2025-11-16 16:04:12,187] WARNING [logger: backend.order_payment] [file: api.py] [func: post (line: 67)]: Product with id=99999 not found for user 1
+[2025-11-16 16:04:12,962] INFO [logger: backend.order_payment] [file: api.py] [func: get_queryset (line: 41)]: Fetching order for user=1
+[2025-11-16 16:04:13,728] INFO [logger: backend.order_payment] [file: api.py] [func: get_queryset (line: 107)]: Fetching order details for user 1
+[2025-11-16 16:04:15,395] INFO [logger: backend.order_payment] [file: api.py] [func: _create_payment (line: 184)]: Payment #1 created for Order #1, amount 200.00
+[2025-11-16 16:04:15,396] INFO [logger: backend.order_payment] [file: api.py] [func: _finalize_order (line: 194)]: Order #1 finalized and basket cleared
+[2025-11-16 16:04:16,163] INFO [logger: backend.order_payment] [file: api.py] [func: _create_payment (line: 184)]: Payment #1 created for Order #2, amount 400.00
+[2025-11-16 16:04:16,163] INFO [logger: backend.order_payment] [file: api.py] [func: _finalize_order (line: 194)]: Order #2 finalized and basket cleared
+[2025-11-16 16:04:16,938] WARNING [logger: backend.order_payment] [file: api.py] [func: _update_stock (line: 170)]: Not enough stock for test_product_1: requested 100, available 10
+[2025-11-16 16:04:17,709] WARNING [logger: backend.order_payment] [file: api.py] [func: _get_order (line: 158)]: Order with id=9999 not found for user 1
+[2025-11-16 16:04:19,277] INFO [logger: backend.order_payment] [file: api.py] [func: _create_payment (line: 184)]: Payment #1 created for Order #1, amount 200.00
+[2025-11-16 16:04:19,278] INFO [logger: backend.order_payment] [file: api.py] [func: _finalize_order (line: 194)]: Order #1 finalized and basket cleared

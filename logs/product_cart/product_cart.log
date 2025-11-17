@@ -1,0 +1,22 @@
+[2025-11-16 16:04:20,159] INFO [logger: backend.product_cart] [file: api.py] [func: get (line: 114)]: Basket listed for user=anonymous with 0 products
+[2025-11-16 16:04:20,924] INFO [logger: backend.product_cart] [file: api.py] [func: post (line: 157)]: Basket updated in session: product_id=1, quantity=2
+[2025-11-16 16:04:20,927] INFO [logger: backend.product_cart] [file: api.py] [func: get (line: 114)]: Basket listed for user=anonymous with 1 products
+[2025-11-16 16:04:21,696] INFO [logger: backend.product_cart] [file: api.py] [func: post (line: 157)]: Basket updated in session: product_id=1, quantity=1
+[2025-11-16 16:04:21,699] INFO [logger: backend.product_cart] [file: api.py] [func: get (line: 114)]: Basket listed for user=anonymous with 1 products
+[2025-11-16 16:04:21,701] INFO [logger: backend.product_cart] [file: api.py] [func: post (line: 157)]: Basket updated in session: product_id=1, quantity=4
+[2025-11-16 16:04:21,704] INFO [logger: backend.product_cart] [file: api.py] [func: get (line: 114)]: Basket listed for user=anonymous with 1 products
+[2025-11-16 16:04:22,453] INFO [logger: backend.product_cart] [file: api.py] [func: post (line: 157)]: Basket updated in session: product_id=1, quantity=5
+[2025-11-16 16:04:22,456] INFO [logger: backend.product_cart] [file: api.py] [func: get (line: 114)]: Basket listed for user=anonymous with 1 products
+[2025-11-16 16:04:22,458] INFO [logger: backend.product_cart] [file: api.py] [func: delete (line: 201)]: Basket item decremented in session: product_id=1, new_quantity=3
+[2025-11-16 16:04:22,461] INFO [logger: backend.product_cart] [file: api.py] [func: get (line: 114)]: Basket listed for user=anonymous with 1 products
+[2025-11-16 16:04:23,207] INFO [logger: backend.product_cart] [file: api.py] [func: post (line: 157)]: Basket updated in session: product_id=1, quantity=2
+[2025-11-16 16:04:23,210] INFO [logger: backend.product_cart] [file: api.py] [func: get (line: 114)]: Basket listed for user=anonymous with 1 products
+[2025-11-16 16:04:23,212] INFO [logger: backend.product_cart] [file: api.py] [func: delete (line: 196)]: Basket item removed from session: product_id=1
+[2025-11-16 16:04:23,212] INFO [logger: backend.product_cart] [file: api.py] [func: get (line: 114)]: Basket listed for user=anonymous with 0 products
+[2025-11-16 16:04:24,703] INFO [logger: backend.product_cart] [file: api.py] [func: post (line: 157)]: Basket updated in session: product_id=1, quantity=10
+[2025-11-16 16:04:24,706] INFO [logger: backend.product_cart] [file: api.py] [func: get (line: 114)]: Basket listed for user=anonymous with 1 products
+[2025-11-16 16:04:24,708] INFO [logger: backend.product_cart] [file: api.py] [func: post (line: 157)]: Basket updated in session: product_id=1, quantity=10
+[2025-11-16 16:04:24,711] INFO [logger: backend.product_cart] [file: api.py] [func: get (line: 114)]: Basket listed for user=anonymous with 1 products
+[2025-11-16 16:04:27,096] INFO [logger: backend.product_cart] [file: api.py] [func: post (line: 61)]: Review created for product_id=2 by user=testuser
+[2025-11-16 16:04:27,860] WARNING [logger: backend.product_cart] [file: api.py] [func: post (line: 76)]: Invalid review data submitted for product_id=2: {'email': [ErrorDetail(string='Enter a valid email address.', code='invalid')]}
+[2025-11-16 16:04:28,613] WARNING [logger: backend.product_cart] [file: api.py] [func: post (line: 76)]: Invalid review data submitted for product_id=2: {'author': [ErrorDetail(string='User with this username does not exist.', code='invalid')]}
