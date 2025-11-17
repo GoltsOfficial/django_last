@@ -1,0 +1,44 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="false" level="WARNING" enabled_by_default="false">
+      <option name="ignoredPackages">
+        <list>
+          <option value="asgiref" />
+          <option value="attrs" />
+          <option value="black" />
+          <option value="certifi" />
+          <option value="charset-normalizer" />
+          <option value="click" />
+          <option value="colorama" />
+          <option value="diploma-frontend" />
+          <option value="Django" />
+          <option value="django-debug-toolbar" />
+          <option value="django-dump-load-utf8" />
+          <option value="django-filter" />
+          <option value="djangorestframework" />
+          <option value="drf-spectacular" />
+          <option value="idna" />
+          <option value="inflection" />
+          <option value="jsonschema" />
+          <option value="jsonschema-specifications" />
+          <option value="mypy-extensions" />
+          <option value="packaging" />
+          <option value="pathspec" />
+          <option value="Pillow" />
+          <option value="platformdirs" />
+          <option value="pytz" />
+          <option value="PyYAML" />
+          <option value="referencing" />
+          <option value="requests" />
+          <option value="rpds-py" />
+          <option value="sentry-sdk" />
+          <option value="sqlparse" />
+          <option value="tzdata" />
+          <option value="uritemplate" />
+          <option value="urllib3" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
