@@ -45,7 +45,7 @@ class CatalogView(ListAPIView):
 
 class ProductLimitedView(APIView):
     def get(self, request: HttpRequest) -> Response:
-        products = Product.get_limited_products()
+        products = Product.objects.filter(limited_edition=True, available=True)[:16]  # ✅ ФИКС
         serializer = CatalogSerializer(products, many=True)
         return Response(serializer.data, status.HTTP_200_OK)
 
@@ -81,7 +81,7 @@ class TagsView(APIView):
 
 class PopularView(APIView):
     def get(self, request: HttpRequest) -> Response:
-        products = Product.get_popular_products()
+        products = Product.objects.filter(available=True).order_by('sorted_index')[:8]  # ✅ ФИКС
         serializer = CatalogSerializer(products, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 

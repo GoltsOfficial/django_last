@@ -14,7 +14,6 @@ urlpatterns = [
     path("api/", include("product.urls")),
     path("api/", include("cart.urls")),
     path("api/", include("order.urls")),
-    path("api/", include("order.urls")),
     path('catalog/<int:id>/', RedirectView.as_view(url='/product/%(id)s/')),
 
     # Frontend LAST (catch-all)

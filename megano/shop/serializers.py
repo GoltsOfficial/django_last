@@ -7,11 +7,32 @@ from product.models import Product, ProductImage, Sale
 
 class CategorySerializer(serializers.ModelSerializer):
     subcategories = serializers.SerializerMethodField()
-    image = serializers.SerializerMethodField()
+    image = serializers.SerializerMethodField()  # ✅ Объявлено, но метода нет!
 
     class Meta:
         model = Category
-        fields = ("id", "title", "image", "subcategories")  # ✅ ТОЛЬКО эти поля
+        fields = ("id", "title", "image", "subcategories")
+
+    def get_subcategories(self, obj):
+        subcategories = obj.children.all()
+        return [
+            {
+                "id": subcat.id,
+                "title": subcat.title,
+                "image": {
+                    "src": subcat.src.url if subcat.src else "",
+                    "alt": subcat.alt
+                }
+            }
+            for subcat in subcategories
+        ]
+
+    # ✅ ДОБАВЬ ЭТОТ МЕТОД!
+    def get_image(self, obj):
+        return {
+            "src": obj.src.url if obj.src else "",
+            "alt": obj.alt
+        }
 
 
 class ProductImageSerializer(serializers.ModelSerializer):
