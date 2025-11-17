@@ -57,6 +57,16 @@ class Product(models.Model):
     def __str__(self):
         return f"{self.title} - {self.price}$"
 
+    @classmethod
+    def get_popular_products(cls, limit=8):
+        """Получить популярные товары"""
+        return cls.objects.filter(available=True).order_by('sorted_index')[:limit]
+
+    @classmethod
+    def get_limited_products(cls, limit=16):
+        """Получить лимитированные товары"""
+        return cls.objects.filter(limited_edition=True, available=True)[:limit]
+
 
 class Specifications(models.Model):
     """Модель для хранения спецификации о товаре"""

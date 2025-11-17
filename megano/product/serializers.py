@@ -10,8 +10,17 @@ class ReviewsSerializer(serializers.ModelSerializer):
         fields = ("author", "email", "text", "rate", "date")
 
     def create(self, validated_data):
-        validated_data["product"] = Product.objects.get(**self.context)
-        return Review.objects.create(**validated_data)
+        # Получаем product_id из context
+        product_id = self.context.get('product_id')
+        if not product_id:
+            raise serializers.ValidationError("Product ID is required")
+
+        try:
+            product = Product.objects.get(pk=product_id, available=True)
+            validated_data["product"] = product
+            return Review.objects.create(**validated_data)
+        except Product.DoesNotExist:
+            raise serializers.ValidationError("Product not found")
 
 
 class SpecificationsSerializer(serializers.ModelSerializer):
