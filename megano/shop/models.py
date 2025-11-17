@@ -39,3 +39,17 @@ class Category(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Banner(models.Model):
+    title = models.CharField(max_length=200, verbose_name="Заголовок")
+    description = models.TextField(verbose_name="Описание")
+    image = models.ImageField(upload_to="banners/", verbose_name="Изображение")
+    link = models.CharField(max_length=200, blank=True, verbose_name="Ссылка")
+    active = models.BooleanField(default=True, verbose_name="Активный")
+    order = models.IntegerField(default=0, verbose_name="Порядок")
+
+    class Meta:
+        verbose_name = "Баннер"
+        verbose_name_plural = "Баннеры"
+        ordering = ['order']

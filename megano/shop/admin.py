@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Tag
+from .models import Category, Tag, Banner
 
 
 @admin.register(Category)
@@ -17,3 +17,9 @@ class TagAdmin(admin.ModelAdmin):
 
     list_display = ["name"]
     search_fields = ["name"]
+
+
+@admin.register(Banner)
+class BannerAdmin(admin.ModelAdmin):
+    list_display = ['title', 'order', 'active']
+    list_editable = ['order', 'active']

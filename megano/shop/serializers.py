@@ -1,40 +1,17 @@
 from django.db.models import Count
 from rest_framework import serializers
 
-from shop.models import Category, Tag
+from shop.models import Category, Tag, Banner
 from product.models import Product, ProductImage, Sale
 
 
 class CategorySerializer(serializers.ModelSerializer):
-
     subcategories = serializers.SerializerMethodField()
     image = serializers.SerializerMethodField()
 
     class Meta:
         model = Category
-        fields = ("id", "title", "image", "subcategories")
-
-    def get_subcategories(self, obj):
-        subcategories = obj.children.all()
-        subcategories_data = [
-            {
-                "id": subcat.id,
-                "title": subcat.title,
-                "image": {
-                    "src": subcat.src.url,
-                    "alt": subcat.alt,
-                },
-            }
-            for subcat in subcategories
-        ]
-        return subcategories_data
-
-    def get_image(self, obj):
-        image_data = {
-            "src": obj.src.url,
-            "alt": obj.alt,
-        }
-        return image_data
+        fields = ("id", "title", "image", "subcategories")  # ✅ ТОЛЬКО эти поля
 
 
 class ProductImageSerializer(serializers.ModelSerializer):
@@ -112,3 +89,17 @@ class SaleSerializer(serializers.ModelSerializer):
 
     def get_id(self, obj):
         return obj.product_id
+
+
+class BannerSerializer(serializers.ModelSerializer):
+    image = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Banner
+        fields = ('id', 'title', 'description', 'image', 'link')
+
+    def get_image(self, obj):
+        return {
+            "src": obj.image.url,
+            "alt": obj.title
+        }

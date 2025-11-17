@@ -5,12 +5,12 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from product.models import Product, Sale
-from shop.models import Category, Tag
+from shop.models import Category, Tag, Banner
 from shop.serializers import (
     CategorySerializer,
     CatalogSerializer,
     TagSerializer,
-    SaleSerializer,
+    SaleSerializer, BannerSerializer,
 )
 from .pagination import CustomPagination
 from .filter_catalog import filter_product, filter_sorted, filter_popular_product
@@ -51,10 +51,9 @@ class ProductLimitedView(APIView):
 
 
 class BannersView(APIView):
-    """View для 5 случайных продуктов"""
-
     def get(self, request: HttpRequest) -> Response:
-        products = Product.objects.order_by("?")[:5]  # Получаем 5 случайных продуктов
+        # Временно возвращаем любые 3 товара
+        products = Product.objects.filter(available=True)[:3]
         serializer = CatalogSerializer(products, many=True)
         return Response(serializer.data, status.HTTP_200_OK)
 
