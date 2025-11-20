@@ -1,3 +1,11 @@
 from django.shortcuts import render
 
-# Create your views here.
+'''
+# URLs
+/sign-in/              # POST
+/sign-up/              # POST
+/sign-out/             # POST
+/profile/              # GET, POST
+/profile/password/     # POST
+/profile/avatar/       # POST
+'''

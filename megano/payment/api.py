@@ -1,2 +1,0 @@
-# URLs
-/payment/{id}/         # POST

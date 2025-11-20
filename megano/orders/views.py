@@ -1,3 +1,7 @@
 from django.shortcuts import render
 
-# Create your views here.
+'''
+# URLs
+/orders/               # GET, POST
+/orders/{id}/          # GET, POST
+'''
