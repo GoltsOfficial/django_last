@@ -20,7 +20,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'frontend'
+    'rest_framework',
+
+    # Frontend static Vue3
+    'frontend',
+    # Applications
+    'accounts.apps.AccountsConfig',
+    'basket.apps.BasketConfig',
+    'catalog.apps.CatalogConfig',
+    'orders.apps.OrdersConfig',
+    'payment.apps.PaymentConfig'
 ]
 
 MIDDLEWARE = [
